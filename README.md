@@ -12,53 +12,64 @@ In this tutorial, you’ll learn how to:
 You’ll need the following to complete this tutorial:
   *	[UP Squared board](http://www.up-board.org/upsquared/)
   *	[Ubuntu 16.04](https://)
-  * [OpenCV version 3.3]
+  * [OpenCV version 3.3.0]
   *	A UVC webcam
 
 ## Setup OpenCV 3.3.0
 
-This sections contains the instructions to download, build and install the OpenCV 3.3.0 libraries on the Ubuntu desktop.
+This sections contains the instructions to download, compile and install the OpenCV 3.3.0 libraries on the Ubuntu desktop.
 
 ### Download
 Open a command prompt from the desktop and type:
 
-git clone https://github.com/...
+```
+cd ~
+mkdir opencv
+cd opencv
+wget -O opencv-3.3.0.zip https://github.com/Itseez/opencv/archive/3.3.0.zip
+wget -O opencv_contrib-3.3.0.zip https://github.com/Itseez/opencv_contrib/archive/3.3.0.zip 
+```
+
+Now, unzip the archives you downloaded:
+
+```
+unzip opencv-3.3.0.zip
+unzip opencv_contrib-3.3.0.zip
+```
+
+After unzipping, you will have two OpenCV directories.
 
 Navigate to the folder **opencv-3.3.0**
 
-### Build
-Next, cd into the **build** folder contained in the **opencv-3.3.0** folder download:
+### Compile
+Here, you will build the OpenCV libraries. 
+
+cd into the **opencv-3.3.0** folder download:
 
 ```
 cd opencv-3.3.0
+mkdir build
 cd build
+```
+Now, fasten your seatbelt:
 
 ```
+cmake ../
+make
+
+```
+
+**Note:** The `cmake` and `make` commands must complete successfully for you to continue with the installation.
 
 ### Install
-To run as root type `su` and when prompted enter your password.
-
-Note: a hastag '#' should appear at the end of the command promopt if you are logged in as root. 
-To find the folder where you installed OpenCV version 3.3.0 on your desktop, type:
-
+From the  `~/opencv/opencv-3.3.0/build ` directory, type:
 ```
-find -name opencv2
-```
-
-For installation, from the <name> directory (what folder do I need to be in?) type:
-```
-make
 sudo make install
-ldconfig
+sudo ldconfig
 ```
 
-optional:
-``` 
-make examples
-```
-#### opencv_contrib-3.3.0 (optional)
-Contributions from the open-source community??
-<step by step>
+`ldconfig` it tells the operating system that the OpenCV libraries are available.
+
 
 ## Compile the code sample in the Arduino Create IDE
 
