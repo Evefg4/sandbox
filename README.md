@@ -37,12 +37,12 @@ unzip opencv-3.3.0.zip
 unzip opencv_contrib-3.3.0.zip
 ```
 
-After unzipping, you will have two OpenCV directories.
+After unzipping the archives, you will have two OpenCV directories.
 
 Navigate to the folder **opencv-3.3.0**
 
 ### Compile
-Here, you will build the OpenCV libraries. 
+In the compile step you'll build the OpenCV libraries. 
 
 cd into the **opencv-3.3.0** folder download:
 
@@ -51,15 +51,22 @@ cd opencv-3.3.0
 mkdir build
 cd build
 ```
-Now, fasten your seatbelt:
+Create the make files:
+
+Approximate compile time: 55m 56s
 
 ```
 cmake ../
 make
-
 ```
 
-**Note:** The `cmake` and `make` commands must complete successfully for you to continue with the installation.
+*Specifying the number of threads/cores to utilize*
+Approximate compile time:
+```
+make -j3
+```
+
+**Note:** The `cmake` and `make` commands must complete successfully for you to continue with the installation below.
 
 ### Install
 From the  `~/opencv/opencv-3.3.0/build ` directory, type:
@@ -70,12 +77,21 @@ sudo ldconfig
 
 `ldconfig` it tells the operating system that the OpenCV libraries are available.
 
-
 ## Compile the code sample in the Arduino Create IDE
 
 In the Arduino Create IDE, verify and then upload the code sample to the UP2 board (or similar hardware). 
 
-After uploading the sketch to the target hardware (default naming?), find a **sketches** folder created in the Home directory.
+The Arduino Create IDE will compile/build the code into an executable. 
+
+```
+su
+cd sketches
+```
+```
+./people-detect
+```
+
+After uploading the sketch to the target hardware (default naming?), find a **sketches** folder created in the Home directory. You will need be logged in as root to run 
 
 ## How it works
 Place commented code snippets here.
