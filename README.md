@@ -4,12 +4,9 @@
 
 ## What you’ll learn
 In this tutorial, you’ll learn how to:
-  1.	Setup OpenCV 3.3.0 on Ubuntu 16.04 LTS 
-  [//]: # (download then compile and install the OpenCV libraries on the target hardware)
+  1.	 [Setup OpenCV 3.3.0 on Ubuntu 16.04 LTS](readme.md#setup-opencv)
   2.	Build a people counter application from source code in Arduino Create IDE
-  [//]: # (compile the code here)
   3.	Run the people counter application from the command prompt on your Ubuntu desktop
-  [//]: # (ensure that you have a webcam connected to the UP2 board)
 
 ## Gather your materials
 You’ll need the following to complete this tutorial:
@@ -18,7 +15,7 @@ You’ll need the following to complete this tutorial:
   * [OpenCV version 3.3.0]
   *	A UVC webcam
 
-## Setup OpenCV 3.3.0
+## Setup OpenCV
 
 This sections contains the instructions to download, compile and install the OpenCV 3.3.0 libraries on the Ubuntu desktop.
 
