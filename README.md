@@ -4,7 +4,7 @@
 
 ## What you’ll learn
 In this tutorial, you’ll learn how to:
-  1.	 [Setup OpenCV 3.3.0 on Ubuntu 16.04 LTS](readme.md#setup-opencv)
+  1.	[Setup OpenCV 3.3.0 on Ubuntu 16.04 LTS](readme.md#setup-opencv)
   2.	Build a people counter application from source code in Arduino Create IDE
   3.	Run the people counter application from the command prompt on your Ubuntu desktop
 
