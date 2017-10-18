@@ -4,9 +4,9 @@
 
 ## What you’ll learn
 In this tutorial, you’ll learn how to:
-  1.	Setup OpenCV 3.3 on Ubuntu 16.04 LTS 
+  1.	Setup OpenCV 3.3.0 on Ubuntu 16.04 LTS 
   [//]: # (download then compile and install the OpenCV libraries on the target hardware)
-  2.	Build a people counter application in Arduino Create IDE
+  2.	Build a people counter application from source code in Arduino Create IDE
   [//]: # (compile the code here)
   3.	Run the people counter application from the command prompt on your Ubuntu desktop
   [//]: # (ensure that you have a webcam connected to the UP2 board)
@@ -97,15 +97,20 @@ void drawText(Mat & image);
 
 ## Arduino Create IDE
 
-Copy and paste the code below into the Arduino Create IDE. Begin a NEW SKETCH and paste the code into the sketch window. Compile the code in the Arduino Create IDE by verify and compile buttons. 
+Copy and paste the code above into the Arduino Create IDE. Open a session in the Arduino Create IDE, begin a NEW SKETCH and paste the code into the sketch window. 
 
 ### Verify
+[//]: # (insert screenshot of "done verifying...")
 
-### Compile
+### Upload
 
-In the Arduino Create IDE, verify and then upload the code sample to the UP2 board (or similar hardware). 
+[//]: # (insert screenshot of "done uploading...")
 
-The Arduino Create IDE will compile/build the code into an executable. 
+### Run the Application
+
+**Note**: make sure you've plugged in a UVC webcam before attempting to run the application
+
+When uploading the code to the target hardware, the Arduino Create IDE will compile the code and create an executable. After successfully uploading the sketch to the target hardware, a *sketches* folder will be created in the Home directory. You will need be logged in as root to run the application from the folder (protected).
 
 ```
 su
@@ -115,12 +120,9 @@ cd sketches
 ./people-detect
 ```
 
-After uploading the sketch to the target hardware (default naming?), find a **sketches** folder created in the Home directory. You will need be logged in as root to run 
+A window should pop up and when a person is detected, you'll see a green bounding box around the person. The counting feature... 
 
 ## How it works
 Place commented code snippets here.
 
-## Run the Application
-cd into the **sketches** directory: cd sketches
-Run as root user: su
 
