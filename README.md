@@ -6,9 +6,7 @@ Intel® Rack Scale Design (Intel® RSD) reference software is a logical architec
 
 This repository is a good starting point for developers who are interested in working with Intel RSD reference software. Before you begin work on your own design solution, we recommend reading the available documentation at the official [Intel RSD site](http://intel.com/intelRSD). 
 
-**Note**: 
-
-This code is reference software only and we expect  developers to make it their own. 
+**Note**: This code is reference software only and we expect  developers to make it their own. 
 
 ## Documents
 
@@ -17,9 +15,7 @@ Any documents referred to in this ReadMe document can be found at the official [
 ## Support
 For questions, concerns, or defects found in the in the current Intel RSD reference software, please create a new issue in this repository. If your questions are about a previous release, include the software version in your topic.
 
-**Note**: 
-
-When creating a new issue, try to include additional information such as log files, REST API dumps or other operating system information to expedite response time.
+**Note**: When creating a new issue, try to include additional information such as log files, REST API dumps or other operating system information to expedite response time.
 
 ## News
 
