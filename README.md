@@ -39,4 +39,4 @@ Below is a list of the most important changes to the new software version:
 
 This code is reference software only and is not feature complete. Intel makes no claims for the quality or completeness of this code.
 
-*Other names and brands may be claimed as the property of others.
+\*Other names and brands may be claimed as the property of others.
