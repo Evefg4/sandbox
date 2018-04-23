@@ -1,37 +1,48 @@
 # Intel® Rack Scale Design Reference Software
 
-Intel® Rack Scale Design (Intel® RSD) reference software is a logical architecture that disaggregates compute, storage, and network resources, and introduces the ability to more efficiently pool and utilize these resources. Intel® Rack Scale Design software APIs simplify resource management and provide the ability to dynamically compose resources based on workload-specific demands.
-
-Learn more at the [official Intel® RSD site](http://intel.com/intelRSD).
+Intel® Rack Scale Design (Intel® RSD) reference software is a logical architecture that disaggregates compute, storage, and network resources while introducing the ability to more efficiently pool and utilize these resources. Intel® RSD software APIs simplify resource management and provide the ability to dynamically compose resources based on workload-specific demands.
 
 ## Getting Started
 
-This repository is a good starting point for developers who are ready to start working with Intel® RSD software. For more details on Intel® RSD, please visit  the [official Intel® RSD site](http://intel.com/intelRSD). It is recommended that you read this entire documentation before starting work with your own Rack Scale Design solution. **Keep in mind this code is reference software only.** It is expected that developers will take this reference software and make it their own. 
+This repository is a good starting point for developers who are interested in working with Intel RSD reference software. Before you begin work on your own design solution, we recommend reading the available documentation at the official [Intel RSD site](http://intel.com/intelRSD). 
+
+**Note**: 
+
+This code is reference software only and we expect  developers to make it their own. 
 
 ## Documents
 
-All documents referred to in this ReadMe document can be also found at the [official Intel® Rack Scale Design Site](http://intel.com/intelRSD).
+Any documents referred to in this ReadMe document can be found at the official [Intel RSD site](http://intel.com/intelRSD).
 
-## Questions and issues
-For questions, concerns, or defects found in the in the current Intel® RSD reference software, please create a new issue in this repository. If your questions are about a previous release, include the Intel® RSD version in your topic.
+## Support
+For questions, concerns, or defects found in the in the current Intel RSD reference software, please create a new issue in this repository. If your questions are about a previous release, include the software version in your topic.
 
-**Note**: When creating a new issue, including additional information such as log files, REST API dumps or other operating system information can expedite response time.
+**Note**: 
+
+When creating a new issue, try to include additional information such as log files, REST API dumps or other operating system information to expedite response time.
 
 ## News
 
-### New version of Rack Scale Solution Reference Software (2.3) has been released!
-The new version of Rack Scale Solution Reference Software (v2.3) has been released! Here is the list of the most important changes:
+### [April 2018] Version 2.3 of the Intel RSD reference software has been released!
 
-1.	NVMe over Fabrics (NVMe-oF) – Enables composition of nodes connected to NVM Express (NVMe)\* drives via RDMA over Converged Ethernet protocol through the Leaf Switches (TORs).
+Below is a list of the most important changes to the new software version:
 
-2.	 Quality of Service (QoS) – Supports setting some QoS parameters to configure for the Leaf Switches. It is required to allocate the capability of a network for selected network traffic over Ethernet. NVMe-oF is one of the traffic types that requires an appropriate level of network resources to be allocated.
+1.	**NVMe\* over Fabrics (NVMe-oF)**
 
-3.	Standards-Based Storage Management – The Storage Services REST API is aligned to the Storage Networking Industry Association (SNIA) Swordfish\* specification.
+    Enables composition of nodes connected to NVM Express (NVMe)\* drives via Remote Direct Memory Access (RDMA) over Converged Ethernet protocol through the Top of Rack switches (TORs) or leaf switches.
 
+2.	**Quality of Service (QoS)**
+    
+    Supports setting some QoS parameters to configure the leaf switches. It is required to allocate the capability of a network for selected network traffic over Ethernet. NVMe-oF is one of the traffic types that requires an appropriate level of network resources to be allocated.
+    
+3.	**Standards-Based Storage Management**
 
+    The Intel RSD Storage Services REST API is aligned to the Storage Networking Industry Association (SNIA) Swordfish\* specification.
 
-## _Disclaimer_
+## Disclaimer
 
-This code is **reference software only and is not feature complete**. 
+This code is reference software only and is not feature complete. 
+
 Intel makes no claims for the quality or completeness of this code.
-*Other names and brands may be claimed as the property of others.
+
+\*Other names and brands may be claimed as the property of others.
