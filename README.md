@@ -151,21 +151,21 @@ The program accepts these parameters:
 ### Browsing Available Test Packages, Test Suites, and Test Cases
 * To list all available test packages:
 
-    `
+    ```
     cts tests list
-    `
+    ```
 
 * To filter by package name:
 
-    `
+    ```
     cts tests list -p Rack_Scale_2_3_POD_Manager
-    `
+    ```
 
 * To filter by package and test suite names:
 
-    `
+    ```
     cts tests list -p Rack_Scale_2_3_POD_Manager -s required
-    `
+    ```
 
 * To generate a sample configuration file for test case:
 
@@ -421,17 +421,17 @@ saved in a text file as shown below:
 ### Solution
   There may be an error related to the pip install process. Reinstall pip's CTS package manually with this command:
 
-    `
+```
     sudo pip install CTS-{version-number}-py2-none-any.whl
-    `
+```
 
   Where _{version-number}_ is for example: CTS-**2.3.0.47.0**-py2-none-any.whl
 
   If you are behind a proxy, you need to add additional param:
 
-    `
-    sudo pip install --proxy http://{proxy-url}:{proxy-port} CTS-{version-number}-py2-none-any.whl
-    `
+```
+sudo pip install --proxy http://{proxy-url}:{proxy-port} CTS-{version-number}-py2-none-any.whl
+```
 
   Where _{proxy-url}_ and _{proxy-port}_ depend on your network settings.
 
@@ -440,18 +440,20 @@ saved in a text file as shown below:
 
 ### Solution
 
-      `
-      $ cts execute tests Rack_Scale_2_3_POD_Manager --test_scripts validate_patch_responses -c config_files.ini
+```
+$ cts execute tests Rack_Scale_2_3_POD_Manager --test_scripts validate_patch_responses -c config_files.ini
+```
 
-      Using CTS in version 2.3.14.0
-      No scripts where selected to execution
-      `
+Using CTS in version 2.3.14.0, no scripts where selected to execution.
+ 
 
   The CTS files in `~/.cts/`may have been created using a root account and their ownership has to be changed:
 
-      `[sudo] chown -R USER_NAME ~/.cts/`
+```
+[sudo] chown -R USER_NAME ~/.cts/
+[sudo] chmod a+x -R ~/.cts/tests/
+```
 
-      `[sudo] chmod a+x -R ~/.cts/tests/`
 ### Issue 3
 * I got an error `IOError`, when I ran a test.
 
@@ -459,4 +461,6 @@ saved in a text file as shown below:
 
   The CTS directory `~/.cts/` may have been created using a root account and its ownership has to be changed:
 
-    `[sudo] chown -R USER_NAME ~/.cts`
+```
+[sudo] chown -R USER_NAME ~/.cts
+```
