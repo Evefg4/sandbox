@@ -8,39 +8,44 @@ The Intel® Rack Scale Design (Intel® RSD) Conformance Test Suite (CTS) tool ve
 ### Install Prerequisites
 
  * Uninstall Validation Test Suite (VTS) before proceeding with the Conformance Test Suite (CTS) installation:
+   ```
+   sudo pip uninstall Vts
  
-    `sudo pip uninstall Vts`
-
-    `sudo apt-get -y update`
-    
-    `sudo apt-get -y install python-pip python-setuptools git python-lxml python-dev python-pysqlite2
-    build-essential libssl-dev libffi-dev libxslt-dev libxml2-dev`
-
+   sudo apt-get -y update
+ 
+   sudo apt-get -y install python-pip python-setuptools git python-lxml python-dev python-pysqlite2
+   build-essential libssl-dev libffi-dev libxslt-dev libxml2-dev
+   ```
  * On RedHat\* based systems:
+   ```
+   dnf update -y
 
-     `dnf update -y`
-
-     `dnf install -y python-pip python-setuptools git python-lxml python-devel redhat-rpm-config`
+   dnf install -y python-pip python-setuptools git python-lxml python-devel redhat-rpm-config
+   ```
 
  * Python* dependencies:
+   ```
+   sudo pip install "lxml==3.8.0" "bs4==0.0.1" "beautifulsoup4==4.4.0" "configparser==3.5.0" "requests==2.9.1"
+   "tabulate==0.7.5" "sqlalchemy==1.1.11" "simplejson==3.8.1" "rstr==2.2.6" "colorama==0.3.7" "jsonpointer==1.9" 
+   "pyopenssl==17.0.0"  "ndg httpsclient==0.4.0" "pyasn1==0.1.9" "pandas==0.19.2"
 
-    `sudo pip install "lxml==3.8.0" "bs4==0.0.1" "beautifulsoup4==4.4.0" "configparser==3.5.0" "requests==2.9.1"
-    "tabulate==0.7.5" "sqlalchemy==1.1.11" "simplejson==3.8.1" "rstr==2.2.6" "colorama==0.3.7" "jsonpointer==1.9" "pyopenssl==17.0.0" "ndg-httpsclient==0.4.0" "pyasn1==0.1.9" "pandas==0.19.2"`
-
-    `sudo pip install "Flask-Bootstrap==3.3.7.1" --no-dependencies`
+   sudo pip install "Flask-Bootstrap==3.3.7.1" --no-dependencies
+   ```
 
 * pip (preffered installer program) requirements:
     
     * Required: pip version v8.0.0
 
     Check version of pip:
-
-    `pip --version`
+    ```
+    pip --version
+    ```
 
     If you have an older version, update to the latest one:
 
-    `pip install -U pip`
-
+    ```
+    pip install -U pip
+    ```
 
 ### Installation from Pre-built .tar.gz Archive
 To install CTS use the `INSTALL.sh` installation script:
@@ -48,28 +53,26 @@ To install CTS use the `INSTALL.sh` installation script:
 1. Download tar.gz package with CTS
 
 2. Extract tar.gz package:
-
-    `
-    tar -zxvf CTS_PACKAGE.tar.gz
-    `
+   ```
+   tar -zxvf CTS_PACKAGE.tar.gz
+   ```
 
 3. Enter extracted directory:
-
-    `
+   ```
     cd CTS_PACKAGE
-    `
+   ```
 
 4. Type the following command and follow the on-screen instructions:
 
-    `
+    ```
     sudo bash INSTALL.sh
-    `
+    ```
 
 5. (ADVANCED MODE) If you want to enable advanced mode, use the command:
 
-    `
+    ```
     sudo bash INSTALL.sh --interactive
-    `
+    ```
 
 ### Installation Script (INSTALL.sh)
 The program accepts these parameters:
@@ -151,91 +154,91 @@ The program accepts these parameters:
 ### Browsing Available Test Packages, Test Suites, and Test Cases
 * To list all available test packages:
 
-    ```
-    cts tests list
-    ```
+  ```
+  cts tests list
+  ```
 
 * To filter by package name:
 
-    ```
-    cts tests list -p Rack_Scale_2_3_POD_Manager
-    ```
+  ```
+  cts tests list -p Rack_Scale_2_3_POD_Manager
+  ```
 
 * To filter by package and test suite names:
 
-    ```
-    cts tests list -p Rack_Scale_2_3_POD_Manager -s required
-    ```
+  ```
+  cts tests list -p Rack_Scale_2_3_POD_Manager -s required
+  ```
 
 * To generate a sample configuration file for test case:
 
-    `
-    cts tests generate_config PACKAGE_NAME TEST_SCRIPT_NAME -o output_file_with_configuration.ini
-    `
+  ```
+  cts tests generate_config PACKAGE_NAME TEST_SCRIPT_NAME -o output_file_with_configuration.ini
+  ```
 
 ### Execution
 
 * To simply execute all tests for Rack_Scale_2_3_POD_Manager validation:
 
-    `
-    cts execute tests Rack_Scale_2_3_POD_Manager --config_files config_file.ini
-    `
+  ```
+  cts execute tests Rack_Scale_2_3_POD_Manager --config_files config_file.ini
+  ```
 
 * To execute only tests for metadata compliance:
 
-    `
-    cts execute tests Rack_Scale_2_3_POD_Manager --test_suites required --config_files config_file.ini
-    `
+  ```
+  cts execute tests Rack_Scale_2_3_POD_Manager --test_suites required --config_files config_file.ini
+  ```
 
 * To execute only a test validating get responses' compliance with provided metadata:
 
-    `
-    cts execute tests Rack_Scale_2_3_POD_Manager --test_scripts validate_get_responses --config_files config_file.ini
-    `
+  ```
+  cts execute tests Rack_Scale_2_3_POD_Manager --test_scripts validate_get_responses --config_files config_file.ini
+  ```
 
 * To set timeout for each script executed, add the flag `-T --timeout`:
 
-    `
-    cts execute tests Rack_Scale_2_3_POD_Manager --config_files config_file.ini -T timeout_in_seconds
-    `
+  ```
+  cts execute tests Rack_Scale_2_3_POD_Manager --config_files config_file.ini -T timeout_in_seconds
+  ```
 
 ### Test Results Browsing
 * To list all test executions:
 
-    `
-    cts status list
-    `
+  ```
+  cts status list
+  ```
 
 * To show detailed information about a specified execution:
 
-    `
-    cts status show RUN_ID
-    `
+  ```
+  cts status show RUN_ID
+  ```
 
 * To delete a result from the CTS database:
 
-    `
-    cts status delete RUN_ID
-    `
+  ```
+  cts status delete RUN_ID
+  ```
 
 * To save results to a file (when *html* option is selected, a new folder called *cts_report* containing *html* files will be created in your working directory):
 
-    `
-    cts status dump RUN_ID --output_format [html/csv/text]
-    `
+  ```
+  cts status dump RUN_ID --output_format [html/csv/text]
+  ```
 
 ### Additional Options
 * Show CTS Version:
 
-    `
-    cts version
-    `
+  ```
+  cts version
+  ```
 
 * The `CTS SOS` command prepares a package for easier debugging. Use this command when you suspect a CTS crash and want to report an issue related to CTS. This command collects information (CTS logs, network configuration, pip dependencies, etc.) and after running the command your working directory should contain an `sos-report-<date>` folder and an `sos-report-<date>.tar.gz` archive.
 
-    `
-    cts sos
-    `
+  ```
+  cts sos
+  ```
 
 
 ## Advanced Usage
@@ -246,9 +249,9 @@ Run list is a mechanism that enables multi-step execution and makes it possible 
 Execution of a run list is very similar to executing a test script.
 
 
-`
+```
 cts execute run_list run_list_2_3
-`
+```
 
 
 `run_list_2_3` is a test specification prepared by the user. It defines the scope of tests to be executed and the configuration that should be used to run tests.
@@ -321,9 +324,9 @@ The `run list` definition refers to additional configuration files:
 
 You can run the API Get Validation tests by passing a flag:
 
-`
+```
 --test_scripts validate_get_responses
-`
+```
 
 The test is read-only and checks that resources exposed on the REST service are compliant with metadata as part of the RSD specification. CTS raises an error if any of the following conditions occur:
 
@@ -341,9 +344,9 @@ API Get Validation is the most basic test that is available in CTS. Therefore, i
 
 You can run the API Patch Validation tests by passing a flag:
 
-`
+```
 --test_scripts validate_patch_responses
-`
+```
 
 The test iterates through all resources discovered on the REST API in search of patchable properties (that is, properties with OData.Permissions/ReadWrite annotation declared in metadata). Based on the property definition, CTS generates a new value and issues a PATCH request followed by GET for verification purposes. If return codes and verification results are correct, the test case passes. Otherwise, CTS reports a warning. When CTS finishes with an actual API resource, the original state is restored.
 
@@ -353,9 +356,9 @@ Intel advises that you run this test immediately after API Get Validation.
 
 You can run the Hardware Checklist Validation tests by passing a flag:
 
-`
+```
 --test_scripts hardware_check_list
-`
+```
 
 The test suite consists of both manual and automatic tests that verify requirements from the Platform Design Specification document are met.
 
@@ -377,9 +380,9 @@ The scope of automatic testing is as follows:
 
 Create, Read, Update, and Delete (CRUD) tests by passing a flag:
 
-`
+```
 --test_scripts crud_operations
-`
+```
 
 The test tries to create an instance of a resource, then checks if it was created correctly. Next, it attempts to patch the resource, rechecks the correctness, again and finally deletes it. The test is supposed to clean up the changes it made no matter when it comes to a stop (for example, if the service created resources incorrectly, it skips the patch but still tries to delete it). The following resources are tested:
 
@@ -414,24 +417,22 @@ saved in a text file as shown below:
 ## Troubleshooting
 ### Issue 1
 * When I ran INSTALL.sh I get:
-
-    `
-    INSTALL.sh: line 317: cts: command not found
-    `
+  ```
+  INSTALL.sh: line 317: cts: command not found
+  ```
 ### Solution
   There may be an error related to the pip install process. Reinstall pip's CTS package manually with this command:
-
-```
-    sudo pip install CTS-{version-number}-py2-none-any.whl
-```
+  ```
+  sudo pip install CTS-{version-number}-py2-none-any.whl
+  ```
 
   Where _{version-number}_ is for example: CTS-**2.3.0.47.0**-py2-none-any.whl
 
   If you are behind a proxy, you need to add additional param:
-
-```
-sudo pip install --proxy http://{proxy-url}:{proxy-port} CTS-{version-number}-py2-none-any.whl
-```
+  
+  ```
+  sudo pip install --proxy http://{proxy-url}:{proxy-port} CTS-{version-number}-py2-none-any.whl
+  ```
 
   Where _{proxy-url}_ and _{proxy-port}_ depend on your network settings.
 
@@ -440,19 +441,19 @@ sudo pip install --proxy http://{proxy-url}:{proxy-port} CTS-{version-number}-py
 
 ### Solution
 
-```
-$ cts execute tests Rack_Scale_2_3_POD_Manager --test_scripts validate_patch_responses -c config_files.ini
-```
+  ```
+  $ cts execute tests Rack_Scale_2_3_POD_Manager --test_scripts validate_patch_responses -c config_files.ini
+  ```
 
 Using CTS in version 2.3.14.0, no scripts where selected to execution.
  
 
   The CTS files in `~/.cts/`may have been created using a root account and their ownership has to be changed:
-
-```
-[sudo] chown -R USER_NAME ~/.cts/
-[sudo] chmod a+x -R ~/.cts/tests/
-```
+  
+  ```
+  [sudo] chown -R USER_NAME ~/.cts/
+  [sudo] chmod a+x -R ~/.cts/tests/
+  ```
 
 ### Issue 3
 * I got an error `IOError`, when I ran a test.
@@ -460,7 +461,7 @@ Using CTS in version 2.3.14.0, no scripts where selected to execution.
 ### Solution
 
   The CTS directory `~/.cts/` may have been created using a root account and its ownership has to be changed:
-
-```
-[sudo] chown -R USER_NAME ~/.cts
-```
+  
+  ```
+  [sudo] chown -R USER_NAME ~/.cts
+  ```
