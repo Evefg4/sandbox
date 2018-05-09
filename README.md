@@ -16,7 +16,7 @@ The Intel® Rack Scale Design (Intel® RSD) Conformance Test Suite (CTS) tool ve
    sudo apt-get -y install python-pip python-setuptools git python-lxml python-dev python-pysqlite2
    build-essential libssl-dev libffi-dev libxslt-dev libxml2-dev
    ```
- * On RedHat\* based systems:
+ * On Red Hat\* based systems:
    ```
    dnf update -y
 
@@ -80,7 +80,7 @@ The program accepts these parameters:
 | Argument | Description |
 |--------------|--------------------|
 | `1 -f --full-install` | Install CTS & Tests (warning: this deletes all old files!)|
-| `2 -p --pip-install` | Install all pip's dependencies |
+| `2 -p --pip-install` | Install all of pip's dependencies |
 | `3 -a --autocompletion` | Install autocompletion for bash (works only with Ubuntu\*)|
 | `6 -u --upgrade` | Upgrade CTS|
 | `8 -r --repair` | Repair ownership|
@@ -88,7 +88,7 @@ The program accepts these parameters:
 | `W -W --WipeAllData` | WIPE ALL DATA and uninstall CTS |
 | `-i --interactive` | Show advanced mode |
 | `--FactoryInstall` | WIPE ALL DATA and perform a CTS reinstallation |
-| `--FactoryUninstall` | WIPE ALL DATA and uninstall CTS (warning: this option has no confirmation) |
+| `--FactoryUninstall` | WIPE ALL DATA and uninstall CTS (**Warning**: this option has no confirmation) |
 
 
 ### Data Structure of CTS
@@ -110,7 +110,7 @@ The program accepts these parameters:
     * Create `config_file.ini` with the following keys:
 
         *  __ApiEndpoint__ - Endpoint to API in format ip:port
-        *  __UseSSL__ - Defines if CTS shall use http or https protocol to connect to api (Yes/No)
+        *  __UseSSL__ - Defines if CTS shall use http or https protocol to connect to the API (Yes/No)
         *  __CertificateCertFile__ and __CertificateKeyFile__ - Absolute paths to client side pem certificate and key files (if API requires client certificate authorization)
         *  __User__ and __Password__ - User and Password used by CTS to authorize (if API requires basic authorization)
 
@@ -118,7 +118,7 @@ The program accepts these parameters:
         
         Other optional keys are:
 
-        *  __IgnoreTypes__ - User may may specify that entities of certain types should not be validated by CTS. Use a comma to ignore more than one type. Example:
+        *  __IgnoreTypes__ - User may specify that entities of certain types should not be validated by CTS. Use a comma to ignore more than one type. Example:
         `
         IgnoreTypes=Bios.1.1.0.Bios, TypeToIgnore.1.0.1.TypeToIgnore
         `
@@ -221,7 +221,7 @@ The program accepts these parameters:
   cts status delete RUN_ID
   ```
 
-* To save results to a file (when *html* option is selected, a new folder called *cts_report* containing *html* files will be created in your working directory):
+* To save results to a file (when the "html" option is selected, a new folder called `cts_report` containing html files will be created in your working directory):
 
   ```
   cts status dump RUN_ID --output_format [html/csv/text]
@@ -330,12 +330,12 @@ You can run the API Get Validation tests by passing a flag:
 
 The test is read-only and checks that resources exposed on the REST service are compliant with metadata as part of the RSD specification. CTS raises an error if any of the following conditions occur:
 
-* property defined as 'required' is not present
-* unknown property is detected in an instance of type that does not allow additional properties
-* value of a property has incorrect type
-* value of a property has a value out of range (resulting from type itself or when min/max values are defined)
-* value of a property does not match a defined regular expression (if any are defined in metadata)
-* resource or object of an unknown type is detected
+* Property defined as 'required' is not present
+* Unknown property is detected in an instance of type that does not allow additional properties
+* Value of a property has incorrect type
+* Value of a property has a value out of range (resulting from type itself or when min/max values are defined)
+* Value of a property does not match a defined regular expression (if any are defined in metadata)
+* Resource or object of an unknown type is detected
 
 
 API Get Validation is the most basic test that is available in CTS. Therefore, it should be executed as the first test, since API correctness is a prerequisite for the rest of the tests.
